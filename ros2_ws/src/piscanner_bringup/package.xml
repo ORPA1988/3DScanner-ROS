@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>piscanner_bringup</name>
+  <version>0.1.0</version>
+  <description>Launch-Dateien und Parameter für den 3D-Scanner.</description>
+  <maintainer email="demo@example.com">OpenAI Demo</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+  <exec_depend>piscanner_control</exec_depend>
+  <exec_depend>piscanner_perception</exec_depend>
+
+</package>

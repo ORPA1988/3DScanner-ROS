@@ -1,0 +1,19 @@
+# YAML-Datei mit Standardparametern für den 3D-Scanner.
+# Jeder Eintrag ist kommentiert, damit Anpassungen leichter fallen.
+
+piscanner_control:
+  ros__parameters:
+    step_pin: 23
+    dir_pin: 24
+    enable_pin: 18
+    steps_per_revolution: 200.0 * (1.0 + 38.0 / 14.0)
+    max_speed: 2.0
+
+piscanner_perception:
+  ros__parameters:
+    lidar_offset_y: 0.05
+    lidar_mount_height: 0.25
+    camera_offset: [0.0, -0.05, 0.2]
+    camera_fov_deg: 180.0
+    save_directory: "~/piscanner_data"
+    lidar_image_size: 512

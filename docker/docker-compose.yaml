@@ -1,0 +1,20 @@
+# ----------------------------------------------------------------------------
+# docker-compose Konfiguration
+# ----------------------------------------------------------------------------
+# Startet den STL27L-Treibercontainer mit Zugriff auf das USB-Gerät und integriert
+# ihn in das ROS2-Netzwerk des Hosts.
+# ----------------------------------------------------------------------------
+
+version: "3.9"
+
+services:
+  stl27l_driver:
+    build: .
+    container_name: stl27l_driver
+    network_mode: "host"
+    privileged: true  # notwendig, um auf das USB-Gerät zuzugreifen
+    devices:
+      - "/dev/bus/usb:/dev/bus/usb"
+    environment:
+      - RMW_IMPLEMENTATION=rmw_fastrtps_cpp
+    command: ["bash", "-c", "source /opt/ros/humble/setup.bash && ros2 run stl27l_driver driver_node"]
