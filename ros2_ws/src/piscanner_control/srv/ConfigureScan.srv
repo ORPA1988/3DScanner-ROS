@@ -1,0 +1,9 @@
+# Service zur Konfiguration eines 3D-Scans.
+# Der Client überträgt die gewünschte Start- und Endposition sowie die Geschwindigkeit.
+# Die Response signalisiert, ob die Parameter übernommen wurden.
+float32 start_angle_rad
+float32 end_angle_rad
+float32 angular_velocity_rad_s
+---
+bool success
+string message
